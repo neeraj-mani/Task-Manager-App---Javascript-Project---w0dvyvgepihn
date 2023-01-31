@@ -1,1 +1,69 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskiFy</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="app-name">TaskiFy</h1>
+      <button class="create-task">create task</button>
+    </header>
+    <main class="app">
+      <div data-type="open" class="tasks tasks__all">
+        <div class="container-heading">
+          <h2 class="heading">open</h2>
+        </div>
+      </div>
+      <div data-type="progress" class="tasks tasks__progress">
+        <div class="container-heading">
+          <h2 class="heading">in progress</h2>
+        </div>
+      </div>
+      <div data-type="review" class="tasks tasks__review">
+        <div class="container-heading">
+          <h2 class="heading">in review</h2>
+        </div>
+      </div>
+      <div data-type="done" class="tasks tasks__done">
+        <div class="container-heading">
+          <h2 class="heading">done</h2>
+        </div>
+      </div>
+      <div class="task-modal">
+        <div class="modal-bg"></div>
+        <div class="modal">
+          <div class="task-input-heading">task-input</div>
+          <textarea
+            placeholder="task.."
+            name=""
+            id=""
+            cols="30"
+            rows="5"
+            class="task-input"
+          ></textarea>
+          <button class="add-task">
+            <svg
+              class="icon icon__plus"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
