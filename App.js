@@ -13,7 +13,6 @@ createTaskBtn.addEventListener("click", (e) => {
 modalBg.addEventListener("click", () => {
   modal.classList.toggle("modal-open");
 });
-function init() {}
 function addTask(taskString, taskType, taskContainer) {
   taskContainer.insertAdjacentHTML(
     "beforeend",
@@ -40,6 +39,8 @@ taskContainerList.forEach((container) => {
 
   container.addEventListener("drop", (e) => {
     e.preventDefault();
+    e.stopPropagation();
+    currentDraggable.classList.remove("dragging");
     if (e.target.closest(".tasks") === currentDraggable.parentElement) return;
     const data = e.dataTransfer.getData("text");
     addTask(
@@ -52,10 +53,24 @@ taskContainerList.forEach((container) => {
 
   container.addEventListener("dragstart", (e) => {
     currentDraggable = e.target;
+    currentDraggable.classList.add("dragging");
+    e.dataTransfer.setDragImage(e.target, 10, 10);
     e.dataTransfer.setData(
       "text",
       e.target.querySelector(".task-content").innerText
     );
     console.log(e);
   });
+});
+
+//drop on body
+
+document.body.addEventListener("dragover", (e) => {
+  e.preventDefault();
+});
+
+document.body.addEventListener("drop", (e) => {
+  console.log("dropped");
+  currentDraggable.remove();
+  currentDraggable = null;
 });
