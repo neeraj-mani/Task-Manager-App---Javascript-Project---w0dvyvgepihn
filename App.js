@@ -20,6 +20,7 @@ function addTask(taskString, taskType, taskContainer) {
       <div class="task-container" draggable="true">
         <div class="task-label task-label__${taskType}"></div>
         <p class="task-content">${taskString}</p>
+        <button class="delete_button">delete</div>
       </div>`
   );
 }
@@ -34,9 +35,9 @@ addTaskBtn.addEventListener("click", () => {
 taskContainerList.forEach((container) => {
   container.addEventListener("dragover", (e) => {
     e.preventDefault();
+
     // console.log(e);
   });
-
   container.addEventListener("drop", (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -74,3 +75,13 @@ document.body.addEventListener("drop", (e) => {
   currentDraggable.remove();
   currentDraggable = null;
 });
+
+taskContainerList.forEach((container) =>
+  container.addEventListener("click", (e) => {
+    console.log(e.target.classList.contains("delete_button"));
+    if (e.target.classList.contains("delete_button")) {
+      e.target.closest(".task-container").remove();
+      console.log("deleted");
+    }
+  })
+);

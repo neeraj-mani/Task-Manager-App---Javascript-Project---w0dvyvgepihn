@@ -194,6 +194,20 @@ body {
   -webkit-background-clip: text;
   color: transparent;
 }
+
+.delete_button {
+  position: absolute;
+  bottom: 7px;
+  right: 10px;
+  padding: 5px;
+  background-color: #ff5455;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.7rem;
+  box-shadow: 0 1px 5px #ff5454c8;
+}
+
 .dragging {
   opacity: 0.5;
   cursor: grabbing;
