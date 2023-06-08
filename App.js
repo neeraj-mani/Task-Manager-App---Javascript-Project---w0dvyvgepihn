@@ -66,16 +66,6 @@ taskContainerList.forEach((container) => {
 
 //drop on body
 
-document.body.addEventListener("dragover", (e) => {
-  e.preventDefault();
-});
-
-document.body.addEventListener("drop", (e) => {
-  console.log("dropped");
-  currentDraggable.remove();
-  currentDraggable = null;
-});
-
 taskContainerList.forEach((container) =>
   container.addEventListener("click", (e) => {
     console.log(e.target.classList.contains("delete_button"));
