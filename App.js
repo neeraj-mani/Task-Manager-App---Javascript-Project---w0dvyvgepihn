@@ -20,7 +20,7 @@ function addTask(taskString, taskType, taskContainer) {
       <div class="task-container" draggable="true">
         <div class="task-label task-label__${taskType}"></div>
         <p class="task-content">${taskString}</p>
-        <button class="delete_button">delete</div>
+        <button class="delete_button">Delete</div>
       </div>`
   );
 }
@@ -35,7 +35,6 @@ addTaskBtn.addEventListener("click", () => {
 taskContainerList.forEach((container) => {
   container.addEventListener("dragover", (e) => {
     e.preventDefault();
-
     // console.log(e);
   });
   container.addEventListener("drop", (e) => {
@@ -63,8 +62,6 @@ taskContainerList.forEach((container) => {
     console.log(e);
   });
 });
-
-//drop on body
 
 taskContainerList.forEach((container) =>
   container.addEventListener("click", (e) => {
