@@ -199,9 +199,9 @@ body {
 .delete_button {
   position: absolute;
   font-family: Roboto;
-  bottom: 7px;
+  bottom: 10px;
   right: 10px;
-  padding: 5px;
+  padding: 7px;
   background-color: #ff5455;
   border: none;
   border-radius: 5px;
